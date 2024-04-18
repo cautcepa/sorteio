@@ -18,6 +18,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
         window.confetti({
           particleCount: 150, // Número de partículas de confete.
           spread: 70,         // Grau de dispersão das partículas.
+          decay: 0.5
           origin: { y: 0.6 }  // Origem vertical dos confetes, um pouco acima do meio da página.
         });
       }
