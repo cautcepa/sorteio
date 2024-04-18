@@ -11,7 +11,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
           particleCount: 150,
           spread: 70,
           origin: { y: 0.6 },
-          decay: 0.7 // Reduz o tempo de duração do confete (valor padrão é 0.9)
+          decay: 0.5 // Reduz o tempo de duração do confete (valor padrão é 0.9)
         });
       }
     })
