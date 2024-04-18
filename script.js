@@ -7,14 +7,18 @@ document.getElementById('drawButton').addEventListener('click', function() {
       document.getElementById('winnerName').textContent = names[index];
       // Verifica se há um nome para ativar os confetes
       if (names[index]) {
-        window.confetti({
-          particleCount: 1000, // Aumenta o número de confetes para uma chuva mais intensa
-          spread: 360,        // Define o spread como 360 para que os confetes cubram toda a tela horizontalmente
-          angle: 90,          // Define o ângulo para que os confetes sejam lançados para baixo
-          origin: { y: 0 },   // Configura a origem no topo do viewport
-          colors: ['#FF0000', '#00FF00', '#0000FF'], // Cores mais fortes e vívidas
-          alpha: 1            // Ajusta a transparência para 1 (opaco)
-        });
+        // Define a quantidade de instâncias de confetes
+        const numInstances = 5;
+        for (let i = 0; i < numInstances; i++) {
+          window.confetti({
+            particleCount: 200, // Número de confetes em cada instância
+            spread: 360,        // Cobrir toda a tela horizontalmente
+            angle: 90,          // Ângulo de queda para baixo
+            origin: { y: 0 },   // Origem no topo da tela
+            colors: ['#FF0000', '#00FF00', '#0000FF'], // Cores fortes
+            alpha: 1            // Confetes opacos
+          });
+        }
       }
     })
     .catch(error => {
