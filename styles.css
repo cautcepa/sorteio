@@ -1,31 +1,31 @@
 body, html {
   margin: 0;
   padding: 0;
-  width: 100%;
   height: 100%;
-  overflow: hidden; /* Evita rolagem desnecessária */
+  overflow: hidden;
 }
 
-.background {
+/* Estiliza o contêiner superior para conter a imagem de fundo */
+.background-image {
   background-image: url('fundo.png');
-  background-size: 100% 100%; /* Ajusta a imagem para cobrir toda a tela */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Altura total da janela do navegador */
+  width: 100%;
+  height: 720px; /* Altura especificada para a imagem de fundo */
 }
 
+/* Estiliza o contêiner inferior para conter o botão e o nome do vencedor */
 .content {
-  position: absolute;
-  bottom: 0%; /* Aumenta para posicionar mais próximo do fundo */
-  width: 100%; /* Largura total */
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adiciona transparência para visualização do botão e nome */
   text-align: center;
-  background: rgba(0, 0, 0, 0.3); /* Transparência aumentada */
-  padding: 20px;
-  border-radius: 10px;
+  padding: 20px 0; /* Preenchimento vertical para dar espaço acima e abaixo do conteúdo */
 }
 
 h2 {
-  color: yellow; /* Cor do texto para o nome sorteado */
+  color: yellow;
   margin-top: 20px;
 }
 
@@ -38,6 +38,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
 button:hover {
   background-color: orange;
 }
