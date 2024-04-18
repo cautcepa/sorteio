@@ -8,7 +8,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
       // Verifica se há um nome para ativar os confetes
       if (names[index]) {
         window.confetti({
-          particleCount: 200, // Aumenta o número de confetes para uma chuva mais intensa
+          particleCount: 1000, // Aumenta o número de confetes para uma chuva mais intensa
           spread: 360,        // Define o spread como 360 para que os confetes cubram toda a tela horizontalmente
           angle: 90,          // Define o ângulo para que os confetes sejam lançados para baixo
           origin: { y: 0 },   // Configura a origem no topo do viewport
