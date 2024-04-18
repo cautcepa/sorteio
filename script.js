@@ -1,4 +1,5 @@
 document.getElementById('drawButton').addEventListener('click', function() {
+  console.log('Botão clicado'); // Isso deve aparecer no console quando o botão for clicado.
   fetch('cadastrados.json')
     .then(response => response.json())
     .then(data => {
