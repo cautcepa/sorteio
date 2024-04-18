@@ -9,7 +9,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
       if (names[index]) {
         window.confetti({
           particleCount: 300,
-          spread: 70,
+          spread: 95,
           origin: { y: 0.6 }
         });
       }
