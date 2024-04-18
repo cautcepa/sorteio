@@ -8,7 +8,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
       // Verifica se há um nome para ativar os confetes
       if (names[index]) {
         window.confetti({
-          particleCount: 150,
+          particleCount: 1000,
           spread: 70,
           angle: 90,           // Define o ângulo para que os confetes sejam lançados para baixo
           origin: { y: 0 }     // Configura a origem no topo do viewport
