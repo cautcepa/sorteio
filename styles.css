@@ -31,7 +31,7 @@ body, html {
 #winnerName {
   color: yellow; /* Cor amarela para o texto, dando destaque */
   margin-top: 20px; /* Margem superior para separar do conteúdo acima */
-  font-size: 82px; /* Tamanho grande da fonte para chamar atenção */
+  font-size: 78px; /* Tamanho grande da fonte para chamar atenção */
 }
 
 /* Estilos base para todos os botões */
