@@ -30,7 +30,7 @@ body, html {
 #winnerName {
   color: yellow; /* Cor do texto */
   margin-top: 20px; /* Espaçamento acima do texto */
-  font-size: 42px; /* Tamanho da fonte aumentado */
+  font-size: 52px; /* Tamanho da fonte aumentado */
 }
 
 /* Estilização do botão de sorteio */
