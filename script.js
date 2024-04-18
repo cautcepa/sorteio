@@ -21,7 +21,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
           const randomIndex = Math.floor(Math.random() * names.length); // Índice aleatório para escolher um nome temporário
           winnerNameElement.textContent = names[randomIndex]; // Exibe um nome aleatório no elemento 'winnerName'
           counter++;
-          if (counter >= 50) { // Verifica se já foram realizadas 50 iterações
+          if (counter >= 55) { // Verifica se já foram realizadas 55 iterações
             clearInterval(animationInterval); // Interrompe a animação
             winnerNameElement.textContent = names[index]; // Exibe o nome definitivo do vencedor
 
