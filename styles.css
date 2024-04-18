@@ -12,14 +12,14 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 720px; /* Altura especificada */
+  height: calc(66.67vh); /* 2/3 da altura da tela */
 }
 
 /* Contêiner inferior que cobre o resto da tela */
 .content {
   position: relative;
   width: 100%;
-  height: calc(100vh - 720px); /* Calcula a altura restante subtraindo a altura do contêiner superior */
+  height: calc(33.33vh); /* 1/3 da altura da tela */
   background: rgba(0, 0, 0, 0.5); /* Transparência para melhor visualização do conteúdo */
   text-align: center;
   padding: 20px 0; /* Preenchimento vertical */
