@@ -16,8 +16,8 @@ document.getElementById('drawButton').addEventListener('click', function() {
       if (names[index]) {
         // Dispara confetes na página se um nome válido foi sorteado.
         window.confetti({
-          particleCount: 150, // Número de partículas de confete.
-          spread: 70,         // Grau de dispersão das partículas.
+          particleCount: 1000, // Número de partículas de confete.
+          spread: 100,         // Grau de dispersão das partículas.
           origin: { y: 0.6 }  // Origem vertical dos confetes, um pouco acima do meio da página.
         });
       }
