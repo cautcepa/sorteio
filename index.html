@@ -1,21 +1,33 @@
 <!DOCTYPE html>
+<!-- A declaração DOCTYPE informa ao navegador a versão do HTML que a página está usando, neste caso, HTML5 -->
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres para UTF-8, que inclui a maioria dos caracteres usados em diversos idiomas -->
     <title>Sorteio Festivo</title>
+    <!-- Título da página, que aparece na aba do navegador -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Link para o arquivo de estilos CSS externo, usado para estilizar a página -->
 </head>
 <body>
+    <!-- Corpo do documento HTML, contendo todo o conteúdo visível da página -->
+
     <!-- Div para o contêiner superior com a imagem de fundo -->
     <div class="background-image"></div>
+    <!-- Uma div com a classe 'background-image', provavelmente usada para mostrar uma imagem de fundo através do CSS -->
 
     <!-- Div para o contêiner inferior com o botão de sortear e o nome do vencedor -->
     <div class="content">
+        <!-- Div com a classe 'content', usada como um contêiner para os elementos interativos -->
         <button id="drawButton">Sortear</button>
+        <!-- Botão com id 'drawButton', que quando clicado, provavelmente dispara uma ação de sorteio -->
         <h2 id="winnerName"></h2>
+        <!-- Cabeçalho h2 com id 'winnerName', usado para exibir o nome do vencedor após o sorteio -->
     </div>
 
+    <!-- Link para a biblioteca de confetes, usada para efeitos visuais quando um vencedor é sorteado -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <!-- Link para o arquivo JavaScript externo 'script.js', que contém a lógica de interação -->
     <script src="script.js"></script>
 </body>
 </html>
