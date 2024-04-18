@@ -1,5 +1,11 @@
 // Adiciona um evento de clique ao botão com id 'drawButton'
 document.getElementById('drawButton').addEventListener('click', function() {
+  // Cria um novo objeto de áudio e carrega o arquivo 'sound.mp3'
+  const audio = new Audio('sound.mp3');
+
+  // Toca o arquivo de áudio
+  audio.play().catch(error => console.error('Erro ao tocar o áudio:', error));
+
   // Faz uma solicitação HTTP GET para obter dados do arquivo 'cadastrados.json'
   fetch('cadastrados.json')
     .then(response => response.json()) // Converte a resposta recebida em JSON
