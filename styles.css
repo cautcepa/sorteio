@@ -1,27 +1,29 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden;
+  height: 100%; /* Garante que o corpo ocupe toda a altura da janela do navegador */
+  overflow: hidden; /* Impede a rolagem */
 }
 
-/* Estiliza o contêiner superior para conter a imagem de fundo */
+/* Contêiner superior com a imagem de fundo */
 .background-image {
   background-image: url('fundo.png');
-  background-size: cover;
+  background-size: 100% 100%; /* Ajusta a imagem para cobrir exatamente a área do contêiner */
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 720px; /* Altura especificada para a imagem de fundo */
+  height: 720px; /* Altura especificada */
 }
 
-/* Estiliza o contêiner inferior para conter o botão e o nome do vencedor */
+/* Contêiner inferior que cobre o resto da tela */
 .content {
   position: relative;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adiciona transparência para visualização do botão e nome */
+  height: calc(100vh - 720px); /* Calcula a altura restante subtraindo a altura do contêiner superior */
+  background: rgba(0, 0, 0, 0.5); /* Transparência para melhor visualização do conteúdo */
   text-align: center;
-  padding: 20px 0; /* Preenchimento vertical para dar espaço acima e abaixo do conteúdo */
+  padding: 20px 0; /* Preenchimento vertical */
+  box-shadow: 0 -5px 10px rgba(0,0,0,0.5); /* Sombra para criar uma divisão visual */
 }
 
 h2 {
