@@ -35,7 +35,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
               });
             }
           }
-        }, 200); // Define o intervalo de tempo para a animação (100 milissegundos)
+        }, 100); // Define o intervalo de tempo para a animação (100 milissegundos)
       };
 
       animateWinner(); // Chama a função para iniciar a animação
