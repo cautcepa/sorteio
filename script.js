@@ -1,31 +1,40 @@
-// Adiciona um ouvinte de evento ao botão com o ID 'drawButton'. 
-// Este ouvinte aguarda um clique para executar a função definida.
 document.getElementById('drawButton').addEventListener('click', function() {
-  // Realiza uma solicitação HTTP GET para buscar o arquivo 'cadastrados.json'.
   fetch('cadastrados.json')
-    .then(response => response.json())  // Converte a resposta recebida em JSON.
+    .then(response => response.json())
     .then(data => {
-      // Extrai o array 'names' do objeto JSON recebido.
       const names = data.names;
-      // Gera um índice aleatório com base no tamanho do array 'names'.
       const index = Math.floor(Math.random() * names.length);
-      // Define o texto do elemento HTML com o ID 'winnerName' para o nome sorteado.
-      document.getElementById('winnerName').textContent = names[index];
+      const winnerNameElement = document.getElementById('winnerName');
+      
+      // Função para animar o sorteio por 5 segundos antes de mostrar o nome definitivo
+      const animateWinner = () => {
+        let counter = 0;
+        const animationInterval = setInterval(() => {
+          const randomIndex = Math.floor(Math.random() * names.length);
+          winnerNameElement.textContent = names[randomIndex];
+          counter++;
+          if (counter >= 50) { // 50 iterações x 100ms cada = 5 segundos
+            clearInterval(animationInterval);
+            winnerNameElement.textContent = names[index]; // Nome definitivo
+          }
+        }, 100); // Intervalo de 100ms para a animação (pode ajustar conforme necessário)
+      };
 
-      // Verifica se um nome foi sorteado com sucesso.
+      // Inicia a animação
+      animateWinner();
+
+      // Confirma se há nome para ativar confetes
       if (names[index]) {
-        // Dispara confetes na página se um nome válido foi sorteado.
         window.confetti({
-          particleCount: 2000, // Número de partículas de confete.
-          spread: 360,         // Grau de dispersão das partículas.
-          origin: { y: 0.7 }  // Origem vertical dos confetes, um pouco acima do meio da página.
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 },
+          decay: 0.9
         });
       }
     })
     .catch(error => {
-      // Captura e registra qualquer erro que ocorra durante a solicitação ou processamento do JSON.
       console.error('Erro ao buscar os nomes:', error);
-      // Mostra uma mensagem de erro no lugar do nome do vencedor se algo der errado.
       document.getElementById('winnerName').textContent = 'Erro ao carregar nomes!';
     });
 });
