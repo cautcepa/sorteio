@@ -16,22 +16,22 @@ document.getElementById('drawButton').addEventListener('click', function() {
           if (counter >= 50) { // 50 iterações x 100ms cada = 5 segundos
             clearInterval(animationInterval);
             winnerNameElement.textContent = names[index]; // Nome definitivo
+
+            // Confirma se há nome para ativar confetes
+            if (names[index]) {
+              window.confetti({
+                particleCount: 2000,
+                spread: 360,
+                origin: { y: 0.6 },
+                decay: 0.9
+              });
+            }
           }
         }, 100); // Intervalo de 100ms para a animação (pode ajustar conforme necessário)
       };
 
       // Inicia a animação
       animateWinner();
-
-      // Confirma se há nome para ativar confetes
-      if (names[index]) {
-        window.confetti({
-          particleCount: 150,
-          spread: 70,
-          origin: { y: 0.6 },
-          decay: 0.9
-        });
-      }
     })
     .catch(error => {
       console.error('Erro ao buscar os nomes:', error);
