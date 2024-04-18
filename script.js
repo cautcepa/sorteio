@@ -8,7 +8,7 @@ document.getElementById('drawButton').addEventListener('click', function() {
       // Confirma se há nome para ativar confetes
       if (names[index]) {
         window.confetti({
-          particleCount: 300,
+          particleCount: 1000,
           spread: 95,
           origin: { y: 0.6 }
         });
