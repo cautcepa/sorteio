@@ -53,7 +53,7 @@ function launchConfetti() {
     gravity: 0.1,  // Reduzido para uma queda mais lenta
     spread: 360,
     origin: { y: 0.6 },
-    ticks: 600   // Aumentado para prolongar a duração da animação
+    ticks: 1000   // Aumentado para prolongar a duração da animação
   };
 
   // Utiliza a biblioteca canvas-confetti para criar efeito visual
