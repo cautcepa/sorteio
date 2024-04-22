@@ -48,10 +48,10 @@ function displayFinalWinner(names, index) {
 // Configura e lança os confetes
 function launchConfetti() {
   const confettiSettings = {
-    particleCount: 2000,
+    particleCount: 2500,
     startVelocity: 60,  // Moderadamente alto para enviar confetes longe, mas não demasiado rápido
     gravity: 0.1,  // Reduzido para uma queda mais lenta
-    spread: 360,
+    spread: 180,
     origin: { y: 0.6 },
     ticks: 1000   // Aumentado para prolongar a duração da animação
   };
