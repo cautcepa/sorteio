@@ -53,7 +53,7 @@ function launchConfetti() {
     gravity: 0.2,  // Diminuído para fazer com que os confetes caiam mais lentamente
     spread: 360,
     origin: { y: 0.6 },
-    decay: 0.2  // Adicionado para fazer com que a velocidade decaia mais lentamente
+    decay: 0.7  // Adicionado para fazer com que a velocidade decaia mais lentamente
   };
 
   // Utiliza a biblioteca canvas-confetti para criar efeito visual
