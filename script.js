@@ -53,7 +53,7 @@ function launchConfetti() {
     gravity: 0.1,  // Reduzido para uma queda mais lenta
     spread: 360,
     origin: { y: 0.6 },
-    ticks: 1000,   // Aumentado para prolongar a duração da animação
+    ticks: 2500,   // Aumentado para prolongar a duração da animação
     scalar: 1.2,   // Tamanho dos confetes aumentado em 1,2 vezes
   };
 
