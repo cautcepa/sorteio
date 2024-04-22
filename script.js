@@ -49,11 +49,10 @@ function displayFinalWinner(names, index) {
 function launchConfetti() {
   const confettiSettings = {
     particleCount: 2000,
-    startVelocity: 70,  // Aumentado para enviar confetes mais longe
-    gravity: 0.2,  // Diminuído para fazer com que os confetes caiam mais lentamente
+    startVelocity: 60,  // Aumentado para enviar confetes mais longe
+    gravity: 0.4,  // Diminuído para fazer com que os confetes caiam mais lentamente
     spread: 360,
     origin: { y: 0.6 },
-    decay: 0.7  // Adicionado para fazer com que a velocidade decaia mais lentamente
   };
 
   // Utiliza a biblioteca canvas-confetti para criar efeito visual
