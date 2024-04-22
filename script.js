@@ -28,7 +28,7 @@ function animateDrawing(names) {
     winnerNameElement.textContent = names[randomIndex];
     counter++;
     
-    if (counter >= 30) {
+    if (counter >= 55) { // Assegura que haja 55 iterações antes de parar a animação
       clearInterval(animationInterval);
       displayFinalWinner(names, randomIndex);
     }
@@ -38,7 +38,7 @@ function animateDrawing(names) {
 // Exibe o nome do vencedor e lança confetes
 function displayFinalWinner(names, index) {
   const winnerNameElement = document.getElementById('winnerName');
-  winnerNameElement.textContent = names[index];
+  winnerNameElement.textContent = names[index]; // Mostra o nome final escolhido após a animação
 
   if (names[index]) {
     launchConfetti();
