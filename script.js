@@ -54,7 +54,6 @@ function launchConfetti() {
     spread: 360,
     origin: { y: 0.6 },
     ticks: 1000   // Aumentado para prolongar a duração da animação
-    shapes: ['square', 'circle', 'star'] // Formatos dos confetes
   };
 
   // Utiliza a biblioteca canvas-confetti para criar efeito visual
