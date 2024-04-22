@@ -1,47 +1,59 @@
-// Adiciona um evento de clique ao botão com id 'drawButton'
-document.getElementById('drawButton').addEventListener('click', function() {
-  // Cria um novo objeto de áudio e carrega o arquivo 'sound.mp3'
-  const audio = new Audio('sound.mp3');
+// Adiciona o evento de clique ao botão com id 'drawButton'
+document.getElementById('drawButton').addEventListener('click', async () => {
+  try {
+    // Reproduz o som do sorteio
+    const audio = new Audio('sound.mp3');
+    await audio.play();
 
-  // Toca o arquivo de áudio
-  audio.play().catch(error => console.error('Erro ao tocar o áudio:', error));
+    // Busca os dados dos participantes
+    const response = await fetch('cadastrados.json');
+    const data = await response.json();
+    const names = data.names;
+    
+    // Inicia a animação de sorteio
+    animateDrawing(names);
 
-  // Faz uma solicitação HTTP GET para obter dados do arquivo 'cadastrados.json'
-  fetch('cadastrados.json')
-    .then(response => response.json()) // Converte a resposta recebida em JSON
-    .then(data => {
-      const names = data.names; // Extrai o array 'names' do objeto de dados JSON
-      const index = Math.floor(Math.random() * names.length); // Gera um índice aleatório com base no tamanho do array 'names'
-      const winnerNameElement = document.getElementById('winnerName'); // Seleciona o elemento HTML onde o nome do vencedor será exibido
-      
-      // Define uma função para animar a exibição de nomes aleatórios antes de mostrar o vencedor final
-      const animateWinner = () => {
-        let counter = 0; // Contador para controlar o número de iterações da animação
-        const animationInterval = setInterval(() => {
-          const randomIndex = Math.floor(Math.random() * names.length); // Índice aleatório para escolher um nome temporário
-          winnerNameElement.textContent = names[randomIndex]; // Exibe um nome aleatório no elemento 'winnerName'
-          counter++;
-          if (counter >= 55) { // Verifica se já foram realizadas 55 iterações
-            clearInterval(animationInterval); // Interrompe a animação
-            winnerNameElement.textContent = names[index]; // Exibe o nome definitivo do vencedor
-
-            // Verifica se o nome selecionado é válido (não vazio) antes de ativar confetes
-            if (names[index]) {
-              window.confetti({
-                particleCount: 2000, // Número de partículas de confete
-                spread: 360, // Ângulo de espalhamento das partículas
-                origin: { y: 0.6 }, // Origem da animação de confete (no meio da tela)
-                decay: 0.9 // Decaimento das partículas para que desapareçam suavemente
-              });
-            }
-          }
-        }, 100); // Define o intervalo de tempo para a animação (100 milissegundos)
-      };
-
-      animateWinner(); // Chama a função para iniciar a animação
-    })
-    .catch(error => {
-      console.error('Erro ao buscar os nomes:', error); // Log de erros caso a requisição falhe
-      document.getElementById('winnerName').textContent = 'Erro ao carregar nomes!'; // Exibe mensagem de erro no elemento 'winnerName'
-    });
+  } catch (error) {
+    console.error('Erro na operação:', error);
+    document.getElementById('winnerName').textContent = 'Erro ao realizar o sorteio!';
+  }
 });
+
+// Animação dos nomes antes do resultado final
+function animateDrawing(names) {
+  const winnerNameElement = document.getElementById('winnerName');
+  let counter = 0;
+  const animationInterval = setInterval(() => {
+    const randomIndex = Math.floor(Math.random() * names.length);
+    winnerNameElement.textContent = names[randomIndex];
+    counter++;
+    
+    if (counter >= 30) {
+      clearInterval(animationInterval);
+      displayFinalWinner(names, randomIndex);
+    }
+  }, 100);
+}
+
+// Exibe o nome do vencedor e lança confetes
+function displayFinalWinner(names, index) {
+  const winnerNameElement = document.getElementById('winnerName');
+  winnerNameElement.textContent = names[index];
+
+  if (names[index]) {
+    launchConfetti();
+  }
+}
+
+// Configura e lança os confetes
+function launchConfetti() {
+  const confettiSettings = {
+    particleCount: 100,
+    spread: 70,
+    startVelocity: 30,
+    origin: { y: 0.6 }
+  };
+
+  // Utiliza a biblioteca canvas-confetti para criar efeito visual
+  confetti.create(document.getElementById('canvas'), { resize: true })(confettiSettings);
+}
