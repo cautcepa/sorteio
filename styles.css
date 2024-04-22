@@ -1,51 +1,51 @@
-/* Define o corpo e o HTML para ter margem zero e sem preenchimento, ocupando toda a altura da janela do navegador e impedindo a rolagem da página */
+/* Aplica a redefinição de margem e preenchimento em todos os elementos HTML e body, e define altura total e desativa a rolagem */
 body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%; /* Garante que o corpo e o HTML ocupem 100% da altura da janela do navegador */
-  overflow: hidden; /* Desabilita a barra de rolagem, impedindo que o usuário role a página */
+  margin: 0; /* Remove a margem padrão */
+  padding: 0; /* Remove o preenchimento padrão */
+  height: 100%; /* Define a altura como 100% da altura da janela de visualização */
+  overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o limite da altura definida */
 }
 
-/* Estilos para o contêiner que contém a imagem de fundo */
+/* Estiliza a div de imagem de fundo para cobrir a parte superior da tela */
 .background-image {
   background-image: url('fundo.png'); /* Define a imagem de fundo */
-  background-size: 100% 100%; /* Estica a imagem para cobrir completamente o contêiner */
-  background-position: center; /* Centraliza a imagem no contêiner */
-  background-repeat: no-repeat; /* A imagem não se repete */
-  width: 100%; /* Largura do contêiner é a mesma da página */
-  height: calc(66.67vh); /* Define a altura como dois terços da altura da janela do navegador */
+  background-size: 100% 100%; /* Escala a imagem para cobrir completamente a área definida */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  width: 100%; /* Largura completa da área de visualização */
+  height: calc(66.67vh); /* Altura definida como dois terços da altura da janela de visualização */
 }
 
-/* Estilos para o contêiner que mostra o botão de sorteio e o nome do vencedor */
+/* Configura o layout e estilo do conteúdo principal onde o sorteio ocorre */
 .content {
-  position: relative; /* Posiciona relativamente para permitir ajustes mais precisos dentro dele */
-  width: 100%; /* Largura total do contêiner */
-  height: calc(33.33vh); /* Define a altura como um terço da altura da janela do navegador */
-  background: rgba(0, 0, 0, 0.5); /* Fundo preto com transparência para destacar o conteúdo sobre a imagem de fundo */
-  text-align: center; /* Alinha o texto e outros elementos ao centro */
-  padding: 20px 0; /* Preenchimento vertical para espaçar o conteúdo do topo e fundo do contêiner */
-  box-shadow: 0 -5px 10px rgba(0,0,0,0.5); /* Sombra na parte superior para criar uma divisão visual entre os contêineres */
+  position: relative; /* Posiciona relativamente para permitir o posicionamento absoluto dos filhos se necessário */
+  width: 100%; /* Largura completa da área de visualização */
+  height: calc(33.33vh); /* Altura definida como um terço da altura da janela de visualização */
+  background: rgba(0, 0, 0, 0.5); /* Fundo preto com transparência para visibilidade do texto */
+  text-align: center; /* Centraliza o texto dentro do div */
+  padding: 20px 0; /* Adiciona preenchimento vertical para espaçamento */
+  box-shadow: 0 -5px 10px rgba(0,0,0,0.5); /* Sombra para dar efeito de profundidade */
 }
 
-/* Estilos para o elemento que exibe o nome do vencedor */
+/* Estiliza o elemento que exibirá o nome do vencedor */
 #winnerName {
-  color: yellow; /* Cor amarela para o texto, dando destaque */
-  margin-top: 20px; /* Margem superior para separar do conteúdo acima */
-  font-size: 78px; /* Tamanho grande da fonte para chamar atenção */
+  color: yellow; /* Cor do texto em amarelo para destaque */
+  margin-top: 20px; /* Margem superior para espaçamento do topo */
+  font-size: 78px; /* Tamanho grande do fonte para destaque */
 }
 
-/* Estilos base para todos os botões */
+/* Estiliza o botão de sorteio */
 button {
-  padding: 10px 20px; /* Preenchimento para tornar o botão mais espesso */
-  font-size: 16px; /* Tamanho da fonte do texto dentro do botão */
-  color: white; /* Cor do texto */
+  padding: 10px 20px; /* Preenchimento para tornar o botão maior e mais clicável */
+  font-size: 16px; /* Tamanho do texto do botão */
+  color: white; /* Cor do texto do botão */
   background-color: darkorange; /* Cor de fundo do botão */
-  border: none; /* Sem borda */
-  border-radius: 5px; /* Borda arredondada para um visual mais suave */
-  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  border: none; /* Sem bordas para um visual mais limpo */
+  border-radius: 5px; /* Bordas arredondadas para estética moderna */
+  cursor: pointer; /* Cursor de ponteiro para indicar clicabilidade */
 }
 
-/* Efeito visual ao passar o mouse sobre o botão */
+/* Efeito de hover para o botão, mudando a cor de fundo ao passar o mouse */
 button:hover {
-  background-color: orange; /* Muda a cor de fundo para laranja quando o mouse está sobre o botão */
+  background-color: orange; /* Cor de fundo mais clara ao passar o mouse */
 }
