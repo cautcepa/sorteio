@@ -48,8 +48,8 @@ function displayFinalWinner(names, index) {
 // Configura e lança os confetes
 function launchConfetti() {
   const confettiSettings = {
-    particleCount: 100,
-    spread: 70,
+    particleCount: 2000,
+    spread: 360,
     startVelocity: 30,
     origin: { y: 0.6 }
   };
