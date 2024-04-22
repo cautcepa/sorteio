@@ -52,7 +52,6 @@ function launchConfetti() {
     startVelocity: 100,  // Aumentado para enviar confetes mais longe
     gravity: 0.2,  // Diminuído para fazer com que os confetes caiam mais lentamente
     spread: 360,
-    startVelocity: 30,
     origin: { y: 0.6 }
   };
 
