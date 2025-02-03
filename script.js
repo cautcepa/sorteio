@@ -75,7 +75,7 @@ const launchConfetti = () => {
     }
 
     // Calcula a quantidade de partículas proporcional ao tempo restante
-    const particleCount = 50 * (timeLeft / duration);
+    const particleCount = 1500 * (timeLeft / duration);
     confetti(Object.assign({}, defaults, {
       particleCount,
       origin: {
