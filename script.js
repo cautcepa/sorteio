@@ -49,18 +49,41 @@ function displayFinalWinner(names, index) {
   }
 }
 
-// Função para iniciar o efeito de confete na tela
-function launchConfetti() {
-  const confettiSettings = {
-    particleCount: 2500, // Número de partículas
-    startVelocity: 70, // Velocidade inicial das partículas
-    gravity: 0.1, // Gravidade aplicada às partículas
-    spread: 360, // Espalhamento das partículas em graus
-    origin: { y: 0.6 }, // Origem vertical das partículas
-    ticks: 2500, // Duração da animação em ticks
-    scalar: 1.2, // Escala das partículas
-  };
+  // Função aprimorada para lançar confetes com partículas que sobem mais alto
+  const launchConfetti = () => {
+    // Duração total da animação em milissegundos
+    const duration = 4000;
+    const animationEnd = Date.now() + duration;
+    const defaults = {
+      startVelocity: 60, // Aumenta a velocidade inicial para que as partículas subam mais
+      gravity: 0.3,      // Diminui a gravidade para que as partículas desacelerem menos na subida
+      spread: 360,
+      ticks: 60,
+      scalar: 1,
+      zIndex: 100,
+    };
 
-  // Cria e executa a animação de confete utilizando a biblioteca confetti.js
-  confetti.create(document.getElementById('canvas'), { resize: true })(confettiSettings);
-}
+    // Função auxiliar para gerar número aleatório em um intervalo
+    const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+    const interval = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        return;
+      }
+
+      // Calcula a quantidade de partículas proporcional ao tempo restante
+      const particleCount = 50 * (timeLeft / duration);
+
+      confetti(Object.assign({}, defaults, {
+        particleCount,
+        origin: {
+          x: randomInRange(0, 1),         // Origem aleatória na horizontal
+          y: Math.random() * 0.2 + 0.8,     // Origem próxima à base para efeito de queda
+        },
+      }));
+    }, 250);
+  };
+});
